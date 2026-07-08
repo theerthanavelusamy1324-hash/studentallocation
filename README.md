@@ -83,14 +83,17 @@ Student-Allocation-Portal/
 ### Dashboard
 ![Dashboard](screenshots/dashboard%20page.jpg)
 
-### Resume Page
-![Resume Page](screenshots/resume%20page.jpg)
+### student Registration Page
+![Student Page](screenshots/student%20page.jpg)
 
-### History Page
-![History Page](screenshots/history%20page.jpg)
+### Course Details Page
+![Course Page](screenshots/course%20page.jpg)
 
-### JobPortal Page
-![JobPortal Page](screenshots/jobportal%20page.jpg)
+### Allocation Details Page
+![Allocation Page](screenshots/allocation%20page.jpg)
+
+### Chat Page
+![Chat Page](screenshots/chat%20page.jpg)
 
 ## 👩‍💻 Author
 
