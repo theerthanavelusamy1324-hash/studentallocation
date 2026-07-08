@@ -10,7 +10,7 @@ The Student Allocation Portal is a web-based application developed to automate t
 
 ## 💻 Source Code
 
-[https://github.com/theerthanavelusamy1324-hash/ResumeBuilderApplication](https://github.com/theerthanavelusamy1324-hash/studentallocation)
+[[https://github.com/theerthanavelusamy1324-hash/ResumeBuilderApplication](https://github.com/theerthanavelusamy1324-hash/studentallocation)](https://github.com/theerthanavelusamy1324-hash/studentallocation)
 
 ✨ Features
 
