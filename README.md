@@ -4,6 +4,14 @@
 
 The Student Allocation Portal is a web-based application developed to automate the student allocation process based on eligibility criteria. The system allows administrators to manage student details, allocate students to courses based on their marks and preferences, and view allocation statistics through an interactive dashboard.
 
+## 🔗 Live Demo
+
+t https://theerthanavelusamy1324-hash.github.io/studentallocation/
+
+## 💻 Source Code
+
+[https://github.com/theerthanavelusamy1324-hash/ResumeBuilderApplication](https://github.com/theerthanavelusamy1324-hash/studentallocation)
+
 ✨ Features
 
 - Student Registration
