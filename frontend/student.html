@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>Student</title>
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<style>
+    body{
+      background: linear-gradient(to right,#F2C2EC,#B5C1EE);
+    }
+</style>
+    </head>
+    <body>
+        <div class="container">
+            <h3 class="text-primary mt-3">Student Registration</h3>
+            <label class="mt-3"><b>Student ID</b></label>
+            <input type="number" id="studentid" class="form-control mt-2" placeholder="Enter studentID">
+                <label class="mt-3"><b>Student Name</b></label>
+            <input type="text" id="studentname" class="form-control mt-2" placeholder="Enter student Name">
+                <label class="mt-3"><b>Student Marks</b></label>
+            <input type="number" id="marks" class="form-control mt-2" placeholder="Enter Marks">
+                <label class="mt-3"><b>Category</b></label>
+            <select id="category" class="form-control mt-2">
+                <option value="" disabled selected>Select Category</option>
+                <option value="General">General</option>
+                <option value="OBC">OBC</option>
+                <option value="SC">SC</option>
+                <option value="ST">ST</option>
+            </select>
+                <label class="mt-3"><b>Coures</b></label>
+            <select id="type" class="form-control mt-2">
+                <option value="" disabled selected>Select Courses</option>
+                <option value="bca">BCA</option>
+                <option value="bba">BBA</option>
+                <option value="mba">MBA</option>
+                <option value="mcom">M.COM</option>
+                   <option value="bcom">B.COM</option>
+                      <option value="ba">BA</option>
+                         <option value="ma">MA</option>
+                            <option value="it">IT</option>
+                               <option value="bsc">B.sc</option>
+                                  <option value="msc">M.sc</option>
+            </select>
+            <button onclick="register()" class="btn btn-success mt-4">Register Student</button>
+            <table class="table table-bordered mt-3">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Marks</th>
+                        <th>Category</th>
+                        <th>Course</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="tablebody"></tbody>
+            </table>
+            <a href="dashboard.html" class="btn btn-dark btn-sm">Back</a>
+        </div>
+        <script>
+            async function register() {
+            let studentid = document.getElementById("studentid").value;
+             let studentname = document.getElementById("studentname").value;
+              let marks = document.getElementById("marks").value;
+               let category = document.getElementById("category").value;
+                let type = document.getElementById("type").value;
+            let response = await fetch(`http://localhost:8080/register?studentid=${studentid}&studentname=${studentname}&marks=${marks}&category=${category}&type=${type}&status=${status}`);
+            let data = await response.json();
+            loadstudent();
+            document.getElementById("studentid").value = "";
+             document.getElementById("studentname").value = "";
+             document.getElementById("marks").value = "";
+             document.getElementById("category").value = "";
+             document.getElementById("type").value = "";
+                
+            }
+            async function loadstudent() {
+                let response = await fetch(`http://localhost:8080/studentdetails`);
+                let data = await response.json();
+                let row = "";
+                console.log(data);
+                for(let s of data){
+                    let badge = (s.marks >= 65)
+                    ?"<span class='btn btn-success btn-sm'>Allocated</span>"
+                    :"<span class='btn btn-danger btn-sm'>Not Allocated</span>";
+                    row +=`
+                    <tr>
+                        <td>${s.studentid}</td>
+                         <td>${s.studentname}</td>
+                          <td>${s.marks}</td>
+                           <td>${s.category}</td>
+                            <td>${s.type}</td>
+                             <td>${badge}</td>
+                             </tr>
+                             `;
+
+                }
+                document.getElementById("tablebody").innerHTML = row;
+                
+            }
+            loadstudent();
+        </script>
+    </body>
+</html>
